@@ -6,13 +6,13 @@ global: &global
   encoding: utf8
 
 development:
-  database: C21Invite_development
+  database: ChronicConference_development
   <<: *global
 
 test: &test
-  database: C21Invite_test<%=ENV['TEST_ENV_NUMBER']%>
+  database: ChronicConference_test<%=ENV['TEST_ENV_NUMBER']%>
   <<: *global
 
 production:
-  database: C21Invite_production
+  database: ChronicConference_production
   <<: *global

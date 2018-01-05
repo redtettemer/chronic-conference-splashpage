@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-C21Invite::Application.load_tasks
+ChronicConference::Application.load_tasks

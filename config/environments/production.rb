@@ -1,4 +1,4 @@
-C21Invite::Application.configure do
+ChronicConference::Application.configure do
   config.lograge.enabled = true
 
   # Settings specified here will take precedence over those in config/application.rb
