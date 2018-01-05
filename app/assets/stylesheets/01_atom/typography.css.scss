@@ -1,0 +1,99 @@
+
+h1 {
+  font-size: 56px;
+  letter-spacing: 5px;
+  line-height: 64px;
+  color: $white;
+  text-transform: uppercase;
+
+  @include respond-max($tablet) {
+    font-size: 45px;
+    line-height: 54px;
+
+  }
+
+  @include respond-max($phone) {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 0;
+  }
+}
+
+h2 {
+  font-size: 56px;
+  letter-spacing: 5px;
+  line-height: 64px;
+  color: $brightGold;
+  text-transform: uppercase;
+
+  @include respond-max(850px) {
+    margin-bottom: 10px;
+  }
+
+  @include respond-max($tablet) {
+    font-size: 45px;
+    line-height: 54px;
+    margin-bottom: .75em;
+  }
+
+  @include respond-max($phone) {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 0;
+  }
+
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+  color: $white;
+  @include respond-max($tablet) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  @include respond-max($phone) {
+    font-size: 20px;
+    line-height: 26px;
+    margin: 10px auto;
+    letter-spacing: 1px;
+  }
+
+  .gold {
+    color: $brightGold;
+  }
+}
+
+p {
+  position: relative;
+  margin: 0 auto;
+  //font-family: 'Oswald', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 1px;
+  font-size: 17px;
+  line-height: 28px;
+  color: $white;
+  font-weight: 300;
+
+  @include respond-max($desktopSmall) {
+    font-size: 15.5px;
+    line-height: 26px;
+  }
+
+  @include respond-max($tablet) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &.no-more {
+    @include respond-min($tablet) {
+      font-size: 26px;
+      margin-top: 200px;
+      line-height: 1.25em;
+    }
+  }
+
+  span {
+    font-weight: 900;
+  }
+}

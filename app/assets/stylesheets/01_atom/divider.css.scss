@@ -1,0 +1,24 @@
+.a-section-divider {
+  width: 420px;
+  height: 2px;
+  margin: 40px auto;
+  background-color: $gold;
+  box-shadow: #906d34 0 0 12px 1px;
+  border-radius: 20px;
+
+  @include respond-max($phoneLarge) {
+    width: 90%;
+    margin: 30px auto;
+  }
+}
+
+
+
+.a-vertical-divider {
+  width: 2px;
+  margin: 0 calc(8.3333333% / 4);
+  background-color: $gold;
+  box-shadow: #906d34 0 0 12px 1px;
+  border-radius: 20px;
+
+}

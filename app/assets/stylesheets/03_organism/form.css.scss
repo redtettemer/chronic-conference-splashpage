@@ -1,0 +1,99 @@
+#form {
+
+  @include respond-max($phoneLarge) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #formContainer {
+    position: relative;
+    margin: 0 auto;
+    //width: 500px;
+    //@include respond-max(550px){
+    //  width: 90%;
+    //}
+  }
+
+  .confirm {
+    margin: 20px auto 0;
+
+    @include respond-max($phone) {
+      width: 40px;
+    }
+  }
+
+  .error {
+    color: $gold;
+    font-size: 12px;
+    max-width: 500px;
+    width: 100%;
+    margin: -5px auto 0;
+    text-align: left;
+    line-height: 12px;
+
+    @include respond-max(550px) {
+      width: 90%;
+      font-size: 16px;
+    }
+  }
+
+  span {
+    text-align: center;
+    font-size: 25px;
+    top: 5px;
+    position: relative;
+    right: 5px;
+  }
+  label {
+    display: none;
+  }
+  input {
+    border: none;
+    background: none;
+    padding: 5px 0;
+    color: $white;
+    font-size: 28px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    transition: all 800ms;
+    outline: none;
+    border-bottom: 1px solid silver;
+
+    @include respond-max($tablet) {
+      font-size: 25px;
+    }
+
+    @include respond-max(550px) {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .goldFormUnderline {
+    width: 0;
+    color: $brightGold;
+    border: 1px solid $brightGold;
+    margin: 0;
+    top: -11px;
+    position: relative;
+    opacity: 0;
+    &.show {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+      opacity: 1;
+      @include respond-max(550px) {
+        width: 100%;
+      }
+    }
+  }
+}

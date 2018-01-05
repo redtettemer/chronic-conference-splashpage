@@ -1,0 +1,15 @@
+.logo {
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  margin-top: 0;
+  left: calc(50% - 50px);
+
+  @include respond-max($phoneLarge) {
+    position: relative;
+    top: 0;
+    margin-top: 30px;
+    left: 0;
+    text-align: center;
+  }
+}

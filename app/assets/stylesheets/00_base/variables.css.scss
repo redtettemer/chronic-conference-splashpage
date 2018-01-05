@@ -1,0 +1,71 @@
+
+///* COLORS *///
+
+$gold: #906d34;
+$brightGold: #c39b57;
+$white: #E7E7E7;
+
+
+
+
+///* RESPONSIVE SIZING *///
+
+$desktopSmall: 900px;
+$tablet: 768px; //1000
+//$tabletSmall: 768px;
+$phoneLarge: 601px;
+$phone: 500px;
+$phoneSmall: 374px;
+
+
+
+///* TYPOGRAPHY *///
+
+@font-face {
+  font-family: 'Oswald';
+  src: font-url('Oswald-ExtraLight.ttf') format('truetype')
+}
+
+
+
+///* MIXINS *///
+
+@mixin TransFast {
+  -webkit-transition: 400ms;
+  -moz-transition: 400ms;
+  -ms-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
+}
+
+.dg {
+  z-index: 100 !important;
+}
+
+@mixin TransSlow {
+  -webkit-transition: 700ms;
+  -moz-transition: 700ms;
+  -ms-transition: 700ms;
+  -o-transition: 700ms;
+  transition: 700ms;
+}
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+.transitionFast {
+  @include TransFast;
+}
+
+.transitionSlow {
+  @include TransSlow;
+}

@@ -1,0 +1,23 @@
+
+///* HIDES *///
+
+.mobile {
+  display: none;
+  @include respond-max($phoneLarge) {
+    display: block;
+  }
+}
+
+.desktop {
+  display: block;
+  @include respond-max($phoneLarge) {
+    display: none;
+  }
+}
+
+.tablet {
+  display: block;
+  @include respond-max(940px) {
+    display: none;
+  }
+}

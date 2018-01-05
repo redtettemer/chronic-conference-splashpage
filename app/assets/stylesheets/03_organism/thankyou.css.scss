@@ -1,0 +1,24 @@
+#thankYou {
+  letter-spacing: 3px;
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  h3 {
+    color: $gold;
+    @include respond-max($phone) {
+      width: 70%;
+      margin: 0 auto;
+      position: relative;
+      line-height: 1.2em
+    }
+  }
+  .info {
+    width: 100px;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+  }
+}

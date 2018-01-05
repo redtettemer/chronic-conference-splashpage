@@ -1,0 +1,10 @@
+#info {
+  box-sizing: border-box;
+
+  @include respond-max($phoneLarge) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+}
