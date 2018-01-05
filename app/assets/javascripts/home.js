@@ -12,6 +12,7 @@ $(document).ready(function () {
     clickEvents();
     // pullUserInfo();
     // prefillForm();
+    inputActive();
 
 })
 
@@ -85,6 +86,14 @@ function clickEvents() {
         $('hr[data-num=' + num + ']').addClass('show')
         that.off('focus')
     })
+}
+
+function inputActive() {
+    $('input').blur(function() {
+        if( !$(this).val().length == 0 ) {
+            $(this).addClass('filled');
+        }
+    });
 }
 
 function submitForm() {

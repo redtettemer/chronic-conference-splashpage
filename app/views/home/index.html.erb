@@ -1,41 +1,31 @@
-<div class="bg-image"></div>
 
 <div class="index" id="column-layout">
 
   <%= image_tag 'logo.png', class:'logo' %>
 
   <div class="index-wrapper">
-    <div class="row">
-      <div class="a-section-divider mobile"></div>
-      <div class="col col-sm-5 col-xs-12 info">
 
+      <div class="a-section-divider tablet-show"></div>
+      <div class="info">
         <%= render :partial => 'info' %>
-
       </div>
 
-      <div class="a-vertical-divider desktop"></div>
-      <div class="a-section-divider mobile"></div>
+      <div class="a-vertical-divider tablet-hide"></div>
+      <div class="a-section-divider tablet-show"></div>
 
 
-      <div class="col col-sm-5 col-xs-12">
-
-        <p class="no-more">Aw snap! This event is full! Better luck next year.</p>
-        <%#= render :partial => 'form' %>
-
+      <div class="rsvp">
+        <!--<p class="no-more">Aw snap! This event is full! Better luck next year.</p>-->
+        <%= render :partial => 'form' %>
       </div>
-    </div>
+
+      <div class="clear"></div>
 
   </div><!-- end index-wrapper-->
 
-  <div class="m-footer col col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+  <div class="m-footer">
     <p>© 2017 Century 21 Real Estate LLC. All rights reserved. Century 21® is a registered trademark owned by Century 21 Real Estate LLC. An equal house opportunity. Each office is independently owned and operated.</p>
   </div>
-
-</div>
-
-<div class="promo desktop">
-  <div class="bg-black"></div>
-
 
 </div>
 

@@ -1,28 +1,34 @@
 
 <div id="form" class="">
 
-  <h2>Reserve <br class="tablet">Your Spot</h2>
+  <h1>Reserve <br class="tablet">Your Spot</h1>
 
   <div id="formContainer">
     <label for="first"></label>
-    <input type="text" id="first" placeholder="FIRST NAME" class="" data-num="1">
-    <hr class="goldFormUnderline transitionSlow"  data-num="1">
+    <input type="text" id="first" placeholder="Name" class="" data-num="1">
     <p class="error first"></p>
     <br class="desktop">
     <label for="last"></label>
-    <input type="text" id="last" placeholder="LAST NAME" class=""  data-num="2">
-    <hr class="goldFormUnderline transitionSlow"  data-num="2">
+    <input type="text" id="last" placeholder="Phone Number" class=""  data-num="2">
+
     <p class="error last"></p>
     <br class="desktop">
     <label for="email"></label>
-    <input type="text" id="email" placeholder="EMAIL ADDRESS" class=""  data-num="3">
-    <hr class="goldFormUnderline transitionSlow"  data-num="3">
+    <input type="text" id="email" placeholder="Email Address" class=""  data-num="3">
+
     <p class="error email"></p>
     <br class="desktop">
-    <label for="company"></label>
-    <input type="company" id="company" placeholder="COMPANY" class=""  data-num="4">
-    <hr class="goldFormUnderline transitionSlow"  data-num="4">
-    <p class="error company"></p>
+    <div class="attendance">
+      <p>I will be attending:</p>
+      <div class="checkbox">
+        <div class="checkbox__input"><input type="checkbox" value="all" name="conference" checked data-num="4"><label></label></div><p class="checkbox__title">Conference</p>
+      </div>
+      <div class="checkbox">
+        <div class="checkbox__input"><input type="checkbox" value="all" name="dinner" checked data-num="5"><label></label></div><p class="checkbox__title">Dinner</p>
+      </div>
+      <div class="clear"></div>
+      <p class="error attendance"></p>
+    </div><!-- end attendance -->
   </div>
 
   <div class="button confirm">

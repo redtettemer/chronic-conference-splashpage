@@ -8,28 +8,40 @@
   position: absolute;
   z-index: 100;
 
-  @include respond-max($phoneLarge) {
+  @include respond-max($tablet) {
     height: auto;
-    overflow: visible;
+    position: relative;
   }
 
 
   .index-wrapper {
     position: relative;
-    top: 52%;
+    top: 50%;
     transform: translateY(-50%);
+    margin: 40px auto;
+    max-width: 1000px;
+    height: 550px;
 
-    @include respond-max($phoneLarge) {
+    .info, .rsvp {
+      width: calc(50% - 41px);
+      float: left;
+      @include respond-max($tablet) {
+        width: 100%;
+        margin: 0 auto;
+        float: none;
+      }
+    }
+
+    @include respond-max(1000px) {
+      width: 92%;
+      height: 650px;
+    }
+
+    @include respond-max($tablet) {
       top: 0;
       transform: translateY(0%);
       height: auto;
-    }
-
-    .info {
-      margin-left: calc(8.33333333% / 1.5);
-      @include respond-max($phoneLarge) {
-        margin-left: auto;
-      }
+      margin-top: 0;
     }
   }
 

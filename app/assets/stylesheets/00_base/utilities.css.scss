@@ -21,3 +21,22 @@
     display: none;
   }
 }
+
+.tablet-hide {
+  display: block;
+  @include respond-max($tablet) {
+    display: none;
+  }
+}
+
+.tablet-show {
+  display: none;
+  @include respond-max($tablet) {
+    display: block;
+  }
+}
+
+
+.clear {
+  clear: both;
+}

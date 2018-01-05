@@ -1,9 +1,13 @@
 
 ///* COLORS *///
 
-$gold: #906d34;
-$brightGold: #c39b57;
-$white: #E7E7E7;
+$red:       #c33a37;
+$redHover:  #911b18;
+
+$black:     #000000;
+$darkgrey:  #939596;
+$grey:      #bcbec0;
+$white:     #FFFFFF;
 
 
 
@@ -12,7 +16,6 @@ $white: #E7E7E7;
 
 $desktopSmall: 900px;
 $tablet: 768px; //1000
-//$tabletSmall: 768px;
 $phoneLarge: 601px;
 $phone: 500px;
 $phoneSmall: 374px;
@@ -21,12 +24,25 @@ $phoneSmall: 374px;
 
 ///* TYPOGRAPHY *///
 
-@font-face {
-  font-family: 'Oswald';
-  src: font-url('Oswald-ExtraLight.ttf') format('truetype')
+.font1-regular {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
 }
 
+.font1-light {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
 
+.font1-semi {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+.font1-black {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
 
 ///* MIXINS *///
 
