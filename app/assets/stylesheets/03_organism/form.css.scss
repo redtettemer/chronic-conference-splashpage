@@ -16,7 +16,6 @@
   }
 
   .confirm {
-    //margin: 20px auto 0;
     margin-top: 20px;
     @include respond-max($phone) {
       width: 40px;
@@ -51,7 +50,7 @@
     @extend .font1-semi;
     color: $grey;
     text-transform: uppercase;
-    font-size: 28px;
+    font-size: 22px;
     letter-spacing: 1px;
     transition: all 800ms;
     outline: none;
@@ -96,7 +95,7 @@
       @extend .font1-semi;
       color: $grey;
       text-transform: uppercase;
-      font-size: 28px;
+      font-size: 22px;
       margin-bottom: 10px;
     }
 
