@@ -7,6 +7,7 @@ h1 {
   color: $red;
   text-transform: uppercase;
   text-align: left;
+  margin-top: 0;
 
   @include respond-max(1000px) {
     font-size: 52px;
