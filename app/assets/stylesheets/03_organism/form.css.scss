@@ -126,7 +126,7 @@
           left: 5px;
           top: 5px;
           z-index: 1;
-          @include transition(.5s);
+          //@include transition(.5s);
         }
 
         input[type=checkbox] {

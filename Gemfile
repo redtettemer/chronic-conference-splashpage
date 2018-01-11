@@ -14,7 +14,7 @@ source 'https://rubygems.org'
 ruby '2.4.0'                    # Heroku documentation highly recommends setting a ruby version number
 
 gem 'rails', '>= 4.2.8'
-gem 'pg'                        # A driver for PostgreSQL, the database of choice for Rails
+gem 'pg', '~> 0.21.0'           # A driver for PostgreSQL, the database of choice for Rails
 gem 'lograge'                   # Makes our prod logs much easier to grok
 gem 'puma'                      # A nice HTTP Server
 gem 'protected_attributes'      # For protecting model from mass assignment attacks with attr_accessible
@@ -22,11 +22,13 @@ gem 'jquery-rails'              # Gives us easy access to jQuery
 gem 'jquery-ui-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'activeadmin'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
+gem 'devise'
+gem 'coffee-rails'
 
 # Useful optional gems
-# gem 'paperclip'                 # Paperclip is useful for handling file attachments associated with models
-# gem 'aws-sdk-rails'             # Allow for the storage of Paperclip attachments on S3
+gem 'paperclip'                 # Paperclip is useful for handling file attachments associated with models
+gem 'aws-sdk-rails'             # Allow for the storage of Paperclip attachments on S3
 
 group :development do
   gem 'progress_bar'            # For better terminal outputs
