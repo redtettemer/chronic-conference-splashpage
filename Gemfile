@@ -22,6 +22,7 @@ gem 'jquery-rails'              # Gives us easy access to jQuery
 gem 'jquery-ui-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'activeadmin'
 
 # Useful optional gems
 # gem 'paperclip'                 # Paperclip is useful for handling file attachments associated with models
