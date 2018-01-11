@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 8155e88a0b94e1b8af4a5f5eeeff667ba0c7a754
+  revision: 589c4f03a1f55f132c3c50f9f7c81567ada2c389
   specs:
     activeadmin (2.0.0.alpha)
       arbre (>= 1.1.1)
@@ -64,7 +64,7 @@ GEM
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
-    binding_of_caller (0.7.3)
+    binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     climate_control (0.2.0)
@@ -119,7 +119,7 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    lograge (0.7.1)
+    lograge (0.8.0)
       actionpack (>= 4, < 5.2)
       activesupport (>= 4, < 5.2)
       railties (>= 4, < 5.2)
@@ -147,7 +147,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    pg (0.21.0)
+    pg (1.0.0)
     polyamorous (1.3.2)
       activerecord (>= 3.0)
     progress_bar (1.1.0)
@@ -269,4 +269,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.15.4
+   1.16.1

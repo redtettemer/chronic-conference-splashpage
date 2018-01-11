@@ -15,6 +15,8 @@ gem 'roo', '~> 2.4'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+gem 'coffee-rails', '~> 4.1.0'
+
 group :production do
   gem 'rails_12factor'
   gem 'rails_stdout_logging'
