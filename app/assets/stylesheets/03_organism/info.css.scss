@@ -1,16 +1,6 @@
 
 
 .info {
-  padding-right: 40px;
-  margin-right: 40px;
-  border-right: solid 2px $red;
-
-  @include respond-max($tablet) {
-    border: none;
-    margin-right: 0;
-    padding-right: 0;
-  }
-
   #info {
     box-sizing: border-box;
 

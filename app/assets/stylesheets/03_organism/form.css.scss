@@ -13,27 +13,27 @@
   #formContainer {
     position: relative;
     margin: 0 auto;
-  }
-
-  .confirm {
-    margin-top: 20px;
-    @include respond-max($phone) {
-      width: 40px;
+    &.hide {
+      display: none;
     }
   }
 
   .error {
+    @extend .font1-regular;
     color: $red;
     font-size: 12px;
-    max-width: 500px;
-    width: 100%;
-    margin: -5px auto 0;
+    margin: -12px auto 0;
     text-align: left;
     line-height: 12px;
+    display: none;
 
     @include respond-max(550px) {
       width: 90%;
       font-size: 16px;
+    }
+
+    &.show {
+      display: block;
     }
   }
 
@@ -45,7 +45,7 @@
     border: 2px solid $grey;
     background: rgba(255,255,255,.6);
     width: 100%;
-    margin: 0 0 10px;
+    margin: 0 0 18px;
     padding: 5px 10px;
     @extend .font1-semi;
     color: $grey;
@@ -97,11 +97,26 @@
       text-transform: uppercase;
       font-size: 22px;
       margin-bottom: 10px;
+
+      &.error {
+        @extend .font1-regular;
+        color: $red;
+        font-size: 12px;
+        margin: 0px auto 0;
+        text-align: left;
+        line-height: 12px;
+        text-transform: none;
+
+        @include respond-max(550px) {
+          width: 90%;
+          font-size: 16px;
+        }
+      }
     }
 
     .checkbox {
       position: relative;
-      height: 26px;
+      height: 30px;
       margin-bottom: 10px;
       float: left;
       &:first-of-type {

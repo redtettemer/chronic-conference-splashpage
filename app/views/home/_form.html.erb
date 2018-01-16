@@ -1,46 +1,57 @@
 
 <div id="form" class="">
 
-  <h1>Reserve <br class="tablet">Your Spot.</h1>
 
-  <div id="formContainer">
-    <label for="first"></label>
-    <input type="text" id="first" placeholder="Name" class="" data-num="1">
-    <p class="error first"></p>
-    <br class="desktop">
-    <label for="last"></label>
-    <input type="text" id="last" placeholder="Phone Number" class=""  data-num="2">
 
-    <p class="error last"></p>
-    <br class="desktop">
-    <label for="email"></label>
-    <input type="text" id="email" placeholder="Email Address" class=""  data-num="3">
+  <div id="formContainer" class="transitionFast">
+    <h1>Reserve <br class="tablet">Your Spot.</h1>
 
-    <p class="error email"></p>
-    <br class="desktop">
-    <div class="attendance">
-      <p>I will be attending:</p>
-      <div class="checkbox">
-        <div class="checkbox__input"><input type="checkbox" value="all" name="conference" checked data-num="4"><label></label></div><p class="checkbox__title">Conference</p>
-      </div>
-      <div class="checkbox">
-        <div class="checkbox__input"><input type="checkbox" value="all" name="dinner" checked data-num="5"><label></label></div><p class="checkbox__title">Dinner</p>
-      </div>
-      <div class="clear"></div>
-      <p class="error attendance"></p>
-    </div><!-- end attendance -->
+    <form>
+      <label for="name"></label>
+      <input type="text" id="name" placeholder="Name" class="" data-num="1">
+      <p class="error name">Required.</p>
+      <br class="desktop">
+
+
+      <label for="phone"></label>
+      <input type="text" id="phone" placeholder="Phone Number" class=""  data-num="2">
+      <p class="error phone">Required. Must be all numbers.</p>
+      <br class="desktop">
+
+
+      <label for="email"></label>
+      <input type="text" id="email" placeholder="Email Address" class=""  data-num="3">
+      <p class="error email">Required.</p>
+      <p class="error already-registered">This email is already registered.</p>
+      <br class="desktop">
+
+
+      <div class="attendance">
+        <p>I will be attending:</p>
+        <div class="checkbox">
+          <div class="checkbox__input"><input type="checkbox" id="conference" value="all" name="conference"  data-num="4"><label></label></div><p class="checkbox__title">Conference</p>
+        </div>
+        <div class="checkbox">
+          <div class="checkbox__input"><input type="checkbox" id="dinner" value="all" name="dinner"  data-num="5"><label></label></div><p class="checkbox__title">Dinner</p>
+        </div>
+        <div class="clear"></div>
+        <p class="error attendance">Please select at least one.</p>
+      </div><!-- end attendance -->
+
+      <button class="confirm">RSVP</button>
+
+    </form>
   </div>
 
-  <div class="button confirm">
-    OK
-  </div>
+
 
 </div>
 
 <div id="thankYou" class="hide transitionFast">
-  <h2>THANK YOU.</h2>
+  <h1>Thank you.</h1>
 
-  <h3>YOU WILL RECEIVE AN RSVP CONFIRMATION IN YOUR EMAIL SHORTLY. <br>
-    WE'LL SEE YOU AT SOHO HOUSE.</h3>
+  <p>You will receive an RSVP confirmation in your email shortly.<br>
+    </br>
+    Long live tacos.</p>
 
 </div>

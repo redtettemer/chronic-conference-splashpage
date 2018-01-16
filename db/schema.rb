@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906170713) do
+ActiveRecord::Schema.define(version: 20180112204858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,17 +50,13 @@ ActiveRecord::Schema.define(version: 20160906170713) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "guests", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "email"
-    t.integer  "rank"
-    t.boolean  "waitlisted"
-    t.boolean  "attending"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "company_name"
-    t.string   "c21_company"
-    t.string   "broker"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "phone"
+    t.boolean  "conference"
+    t.boolean  "dinner"
   end
 
 end

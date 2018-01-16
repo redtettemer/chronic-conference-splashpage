@@ -1,18 +1,30 @@
+#form {
 
-.button {
-  border: 2px solid $red;
-  padding: 5px 50px;
-  cursor: pointer;
-  width: 150px;
-  height: 40px;
-  line-height: 40px;
-  @extend .font1-semi;
-  font-size: 20px;
-  letter-spacing: 2px;
-  text-align: center;
-  @include TransFast;
-  &:hover {
-    background: $red;
-    color: $white;
+  form input[type=submit], form input[type=button], form button {
+    border: 2px solid $red;
+    padding: 5px 50px;
+    cursor: pointer;
+    line-height: 40px;
+    @extend .font1-semi;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    @include TransFast;
+    color: $black;
+
+    border-radius: 0;
+    background: transparent;
+    text-shadow: none;
+    box-shadow: none;
+    margin: 0;
+
+    &:hover {
+      background: $red;
+      color: $white;
+    }
   }
 }
+
+
+

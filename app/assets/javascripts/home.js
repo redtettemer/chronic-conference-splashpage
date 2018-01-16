@@ -1,178 +1,114 @@
-var globalStorage = {
-    features: {},
-    userInfo: {}
-}
-
-var textOne,
-    textTwo,
-    textThree,
-    textFour
-
 $(document).ready(function () {
-    clickEvents();
-    // pullUserInfo();
-    // prefillForm();
-    inputActive();
+    formSubmission();
 
-})
+});
 
+var ddd
 
-function pullUserInfo() {
-    var first, last, email
-    first = getQueryParam('first')
-    last = getQueryParam('last')
-    email = getQueryParam('email')
+function formSubmission() {
+    $('#form').find('form').submit(function (e) {
+        e.preventDefault();
 
-    if (first == 'first')
-        first = ''
-    if (last == 'last')
-        last = ''
-    if (email == 'email')
-        email = ''
+        clearErrors();
 
-    return [first, last, email]
-}
+        var name = $('#form form input#name').val(),
+            email = $('#form form input#email').val(),
+            phone = $('#form form input#phone').val(),
+            conference = $('#form form input#conference')[0].checked,
+            dinner = $('#form form input#dinner')[0].checked;
 
-function prefillForm(firstname, lastname, email) {
-    var one,
-        two,
-        three
-    one = two = three = true
-    if (firstname != 'First' && firstname != '') {
-        $('#first').val(firstname);
-        one = false
-    }
+        var errors = validate(name, email, phone, conference, dinner);
 
-    if (lastname != 'Last' && lastname != '') {
-        $('#last').val(lastname)
-        two = false
-    }
+        if (errors[0] || errors[1] || errors[2] || errors[3])
+            showErrors(errors);
+        else {
+            $.ajax({
+                type: 'POST',
+                url: '/submit',
+                data: {name: name, phone: phone, email: email, conference: conference, dinner: dinner},
+                success: function (r) {
+                   if (r['success']) {
+                       //success
 
-    if (email != 'Email' && email != '') {
-        $('#email').val(email)
-        three = false
-    }
+                       //code that fades out form and fades in success screen.
+                       $('#formContainer').addClass('hide');
+                       $('#thankYou').removeClass('hide');
 
-    if (one || two || three) {
-        $('#form h2').html('PLEASE ENTER YOUR INFORMATION')
-    }
-}
-
-function clickEvents() {
-    $('.button').click(function () {
-        var that = $(this)
-        if (that.hasClass('rsvp')) {
-            rsvpEvents()
-        } else if (that.hasClass('info') && !that.hasClass('post')) {
-            infoEvents()
-        } else if (that.hasClass('confirm')) {
-            submitForm()
-        } else if (that.hasClass('post')) {
-            postInfoEvents()
+                   }
+                   else  {
+                       $('.already-registered').addClass('show')
+                   }
+                },
+                error: function (r) {
+                    showErrors(['We\'re sorry, the request has failed', null])
+                }
+            })
         }
     })
 
-    if (isIOS()) {
-        $('input').on('blur', function (e) {
-            /*e.preventDefault();
-            e.stopPropagation();
-            window.scrollTo(0, 0);*/
-        });
+    function clearErrors() {
+        //hides error states//
+
+        $('p.error.name').removeClass('show');
+
+        $('p.error.phone').removeClass('show');
+
+        $('p.error.email').removeClass('show');
+
+        $('p.error.attendance').removeClass('show');
+
+        $('.already-registered').removeClass('show');
     }
 
-    $('input').on('focus', function () {
-        var that = $(this)
-        var num = that.data('num')
-        $('hr[data-num=' + num + ']').addClass('show')
-        that.off('focus')
-    })
-}
 
-function inputActive() {
-    $('input').blur(function() {
-        if( !$(this).val().length == 0 ) {
-            $(this).addClass('filled');
+    function showErrors(errors) {
+        //shows error states//
+
+        if (errors[0]) {
+            $('p.error.name').addClass('show')
         }
-    });
-}
+        if (errors[1]) {
+            $('p.error.phone').addClass('show')
+        }
+        if (errors[2]) {
+            $('p.error.email').addClass('show')
+        }
+        if (errors[3]) {
+            $('p.error.attendance').addClass('show')
+        }
 
-function submitForm() {
-    // quickGlow($('.button.confirm'))
-
-    var first = $('#first').val(),
-        last = $('#last').val(),
-        email = $('#email').val(),
-        company = $('#company').val();
-
-    $('.error.first').html('')
-    $('.error.last').html('')
-    $('.error.email').html('')
-    $('.error.company').html('')
-
-    var errors = verifyForm()
-
-    if (errors[0] != '' || errors[1] != '' || errors[2] != '' || errors[3] != '') {
-        $('.error.first').html(errors[0])
-        $('.error.last').html(errors[1])
-        $('.error.email').html(errors[2])
-        $('.error.company').html(errors[3])
-        return
     }
 
-    $.post('/submit',
-      {
-        'first': first,
-        'last': last,
-        'email': email,
-        'company': company
-      },
-      function (response) {
-        if (response.success) {
-            $('#form').addClass('hide')
-            $('#thankYou').removeClass('hide')
-            if (globalStorage.features.annyang)
-                annyang.removeCommands(['rsvp', 'info', 'back'])
-        } else {
-            $('.error.email').html(response.msg)
+    function validate(name, email, phone, conference, dinner) {
+        //need to accept email, phone, name as inputs//
+
+        var errorsArr = [true, true, true, true];
+
+        if (name.length > 1) {
+            errorsArr[0] = false
         }
-      })
-      .fail(function (response) {
-        $('.error.company').html('There was an error submitting the form.')
-      });
+
+        if (validateEmail(email)) {
+            errorsArr[1] = false
+        }
+
+        if (phone.length >= 10) {
+            var cleanedPhone = phone.replace(/-/g, '');
+            if (!isNaN(cleanedPhone))
+                errorsArr[2] = false
+        }
+
+        if (conference || dinner)
+            errorsArr[3] = false;
+
+        return errorsArr
+    }
 }
 
-function verifyForm() {
-    var first = $('#first').val(),
-        last = $('#last').val(),
-        email = $('#email').val(),
-        company = $('#company').val();
-
-    var errors = []
-
-    if (first.length < 1)
-        errors.push('Please provide your first name')
-    else
-        errors.push('')
-
-    if (last.length < 1)
-        errors.push('Please provide your last name')
-    else
-        errors.push('')
-
-    if ((email.length < 1) || !validateEmail(email))
-        errors.push('Please provide a valid email address')
-    else
-        errors.push('')
-
-    if (company.length < 1)
-        errors.push('Please provide your company name')
-    else
-        errors.push('')
-
-    return errors
-}
 
 function validateEmail(email) {
-  var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return emailReg.test(email);
+    var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailReg.test(email);
 }
+
+
