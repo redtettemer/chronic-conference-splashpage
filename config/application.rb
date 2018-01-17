@@ -72,8 +72,7 @@ module ChronicConference
         domain: ENV.fetch("SMTP_DOMAIN"),
         enable_starttls_auto: true,
         password: ENV.fetch("SMTP_PASSWORD"),
-        port: "587",
-        user_name: ENV.fetch("SMTP_USERNAME")
+        port: "587"
     }
     config.action_mailer.default_url_options = {host: ENV["SMTP_DOMAIN"]}
 

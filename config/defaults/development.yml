@@ -7,4 +7,3 @@ S3_SECRET_ACCESS_KEY: ""
 SMTP_ADDRESS: smtp.mandrillapp.com
 SMTP_DOMAIN: localhost
 SMTP_PASSWORD: eyr-ZLBytGzKII9CkYIgXw
-SMTP_USERNAME: Red Tettemer O'Connell and Partners
