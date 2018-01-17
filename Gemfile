@@ -25,6 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
 gem 'devise'
 gem 'coffee-rails'
+gem 'mandrill-api'
 
 # Useful optional gems
 gem 'paperclip'                 # Paperclip is useful for handling file attachments associated with models

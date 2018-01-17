@@ -22,9 +22,9 @@ module ChronicConference
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/lib)
-	config.autoload_paths += Dir[File.join(Rails.root, "lib", "core_ext", "*.rb")].each {|l| require l }
+    config.autoload_paths += Dir[File.join(Rails.root, "lib", "core_ext", "*.rb")].each {|l| require l}
 
-	# Only load the plugins named here, in the order given (default is alphabetical).
+    # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
@@ -58,6 +58,7 @@ module ChronicConference
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
+    config.action_mailer.raise_delivery_errors = true
 
     # Enable the asset pipeline
     config.assets.enabled = true
@@ -65,14 +66,16 @@ module ChronicConference
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    ActionMailer::Base.smtp_settings = {
-        :user_name => ENV['SENDGRID_USERNAME'],
-        :password => ENV['SENDGRID_PASSWORD'],
-        :domain => ENV['SENDGRID_DOMAIN'],
-        :address => 'smtp.sendgrid.net',
-        :port => 587,
-        :authentication => :plain,
-        :enable_starttls_auto => true
+    config.action_mailer.smtp_settings = {
+        address: ENV.fetch("SMTP_ADDRESS"),
+        authentication: :plain,
+        domain: ENV.fetch("SMTP_DOMAIN"),
+        enable_starttls_auto: true,
+        password: ENV.fetch("SMTP_PASSWORD"),
+        port: "587",
+        user_name: ENV.fetch("SMTP_USERNAME")
     }
+    config.action_mailer.default_url_options = {host: ENV["SMTP_DOMAIN"]}
+
   end
 end

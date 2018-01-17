@@ -4,6 +4,7 @@ FB_APP_NAMESPACE: ""
 S3_BUCKET: ""
 S3_ACCESS_KEY_ID: ""
 S3_SECRET_ACCESS_KEY: ""
-SENDGRID_PASSWORD: aizj8zom9413
-SENDGRID_USERNAME: app85902413@heroku.com
-DOMAIN: localhost
+SMTP_ADDRESS: smtp.mandrillapp.com
+SMTP_DOMAIN: localhost
+SMTP_PASSWORD: eyr-ZLBytGzKII9CkYIgXw
+SMTP_USERNAME: Red Tettemer O'Connell and Partners
