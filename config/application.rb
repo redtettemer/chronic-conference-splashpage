@@ -65,6 +65,8 @@ module ChronicConference
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.action_mailer.raise_delivery_errors = true
+
     ActionMailer::Base.smtp_settings = {
         :sengrid_api_key => ENV['SENDGRID_API_KEY'],
         :address => 'smtp.sendgrid.net',
