@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
 
-  default from: "sdriban@rtop.com"
+  default from: "admin@chronic-tacos.com"
 
   def confirmation(email)
     subject_line = "Chronic Conference Confirmation"
