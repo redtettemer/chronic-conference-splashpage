@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def submit
     email = params[:email].downcase
     name = params[:name]
@@ -15,6 +16,7 @@ class HomeController < ApplicationController
       render :json => {success: true}
     end
   end
+
 
   private
 
