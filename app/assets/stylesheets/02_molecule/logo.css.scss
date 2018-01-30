@@ -1,15 +1,12 @@
 .logo {
   width: 100px;
   height: 100px;
-  position: absolute;
-  top: 20px;
-  margin-top: 0;
-  left: calc(50% - 50px);
+  position: relative;
+  margin: 0 auto 0;
+  text-align: center;
+  display: block;
 
   @include respond-max($tablet) {
-    position: relative;
-    top: 0;
-    text-align: center;
-    margin: 30px auto 0;
+    margin: 10px auto 0;
   }
 }

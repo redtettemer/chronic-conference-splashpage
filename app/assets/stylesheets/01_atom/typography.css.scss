@@ -48,23 +48,21 @@ h2 {
 }
 
 p {
-  @extend .font1-regular;
+  @extend .font1-light;
   position: relative;
   margin: 0 auto;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 28px;
   color: $black;
-  font-weight: 300;
   text-align: left;
 
   @include respond-max($desktopSmall) {
-    font-size: 15.5px;
+    font-size: 16px;
     line-height: 26px;
   }
 
   @include respond-max($tablet) {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 24px;
   }
 
@@ -77,6 +75,14 @@ p {
   }
 
   span {
-    font-weight: 900;
+    @extend .font1-black
+  }
+  &.small {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 15px;
+    @include respond-max($tablet) {
+      font-size: 12px;
+    }
   }
 }
