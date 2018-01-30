@@ -1,3 +1,3 @@
 class Guest < ActiveRecord::Base
-  attr_accessible  :name, :phone, :email, :conference, :dinner
+  attr_accessible  :name, :phone, :email, :conference, :dinner, :store
 end

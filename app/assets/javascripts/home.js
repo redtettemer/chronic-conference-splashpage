@@ -3,7 +3,6 @@ $(document).ready(function () {
 
 });
 
-var ddd
 
 function formSubmission() {
     $('#form').find('form').submit(function (e) {
@@ -14,18 +13,19 @@ function formSubmission() {
         var name = $('#form form input#name').val(),
             email = $('#form form input#email').val(),
             phone = $('#form form input#phone').val(),
+            store = $('#form form input#store').val(),
             conference = $('#form form input#conference')[0].checked,
             dinner = $('#form form input#dinner')[0].checked;
 
-        var errors = validate(name, email, phone, conference, dinner);
+        var errors = validate(name, email, phone, conference, dinner, store);
 
-        if (errors[0] || errors[1] || errors[2] || errors[3])
+        if (errors[0] || errors[1] || errors[2] || errors[3] || errors[4])
             showErrors(errors);
         else {
             $.ajax({
                 type: 'POST',
                 url: '/submit',
-                data: {name: name, phone: phone, email: email, conference: conference, dinner: dinner},
+                data: {name: name, phone: phone, email: email, conference: conference, dinner: dinner, store: store},
                 success: function (r) {
                    if (r['success']) {
                        //success
@@ -54,6 +54,7 @@ function formSubmission() {
         $('p.error.phone').removeClass('show');
 
         $('p.error.email').removeClass('show');
+        $('p.error.store').removeClass('show');
 
         $('p.error.attendance').removeClass('show');
 
@@ -76,13 +77,16 @@ function formSubmission() {
         if (errors[3]) {
             $('p.error.attendance').addClass('show')
         }
+        if (errors[4]) {
+            $('p.error.store').addClass('show')
+        }
 
     }
 
-    function validate(name, email, phone, conference, dinner) {
+    function validate(name, email, phone, conference, dinner, store) {
         //need to accept email, phone, name as inputs//
 
-        var errorsArr = [true, true, true, true];
+        var errorsArr = [true, true, true, true, true];
 
         if (name.length > 1) {
             errorsArr[0] = false
@@ -100,6 +104,9 @@ function formSubmission() {
 
         if (conference || dinner)
             errorsArr[3] = false;
+
+        if (store.length > 1)
+            errorsArr[4] = false
 
         return errorsArr
     }
