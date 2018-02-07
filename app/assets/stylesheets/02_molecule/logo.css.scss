@@ -5,8 +5,6 @@
   margin: 0 auto 0;
   text-align: center;
   display: block;
+  padding-top: 20px;
 
-  @include respond-max($tablet) {
-    margin: 10px auto 0;
-  }
 }
