@@ -9,19 +9,14 @@ h1 {
   text-align: left;
   margin-top: 0;
 
-  @include respond-max(1000px) {
-    font-size: 52px;
-    line-height: 54px;
-  }
-
   @include respond-max($tablet) {
-    font-size: 56px;
-    line-height: 58px;
+    font-size: 60px;
+    line-height: 60px;
   }
 
   @include respond-max($phone) {
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 44px;
+    line-height: 46px;
     margin-top: 0;
   }
 }
@@ -55,16 +50,6 @@ p {
   line-height: 28px;
   color: $black;
   text-align: left;
-
-  @include respond-max($desktopSmall) {
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  @include respond-max($tablet) {
-    font-size: 15px;
-    line-height: 24px;
-  }
 
   &.no-more {
     @include respond-min($tablet) {
