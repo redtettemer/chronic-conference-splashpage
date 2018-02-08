@@ -29,6 +29,7 @@ h2 {
   color: $black;
   text-align: left;
   text-transform: uppercase;
+  margin: 0;
 
   @include respond-max($phone) {
     font-size: 20px;
@@ -45,7 +46,7 @@ h2 {
 p {
   @extend .font1-light;
   position: relative;
-  margin: 0 auto;
+  margin: 1em auto 0;
   font-size: 18px;
   line-height: 28px;
   color: $black;

@@ -22,10 +22,60 @@ body {
 .index-wrapper {
   width: 92%;
   margin: 50px auto 0;
-  max-width: 650px;
+  max-width: 1000px;
+
+  @include respond-max($tablet) {
+    padding: 0 0 30px;
+  }
+  h1 {
+    max-width: 600px;
+  }
+}
+
+.column-wrapper {
+  display: flex;
+  @include respond-max($tablet) {
+    display: block;
+  }
+  .column {
+    //width: 50%;
+  }
 }
 
 
 .info {
-  margin-bottom: 35px;
+  border-right: solid 1px $red;
+  box-sizing: border-box;
+  padding-right: 30px;
+  width: calc(100% - 380px);
+
+  button {
+    margin-top: 45px;
+  }
+
+  @include respond-max($desktopSmall) {
+    width: 50%;
+  }
+  @include respond-max($tablet) {
+    width: 100%;
+    border-right: none;
+    border-bottom: solid 2px $red;
+    padding: 0 0 35px;
+    margin-bottom: 30px;
+  }
+}
+
+.timeline {
+  border-left: solid 1px $red;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: 430px;
+  @include respond-max($desktopSmall) {
+    width: 50%;
+  }
+  @include respond-max($tablet) {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+  }
 }
